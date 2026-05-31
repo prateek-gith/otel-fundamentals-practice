@@ -4,9 +4,8 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from opentelemetry import trace
 
-import crud
-import schemas
-from database import get_db
+from app import crud, schemas
+from app.database import get_db
 
 router = APIRouter(
     prefix="/users",

@@ -6,6 +6,7 @@ python-dotenv
 pydantic[email]
 email-validator
 prometheus-client
+prometheus-fastapi-instrumentator
 
 opentelemetry-api
 opentelemetry-sdk

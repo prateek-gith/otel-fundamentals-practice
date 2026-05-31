@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 
-from database import engine
-from models import Base
-from telemetry import setup_telemetry
-from routers.users import router
+from app.database import engine
+from app.models import Base
+from app.telemetry import setup_telemetry
+from app.routers.users import router
+from prometheus_fastapi_instrumentator import Instrumentator
+
+
 
 app = FastAPI(
     title="FastAPI OpenTelemetry App"
@@ -19,6 +22,7 @@ setup_telemetry(
 )
 
 app.include_router(router)
+Instrumentator().instrument(app).expose(app)
 
 
 @app.get("/")

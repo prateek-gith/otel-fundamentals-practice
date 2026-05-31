@@ -1,1 +1,11 @@
 .env
+myvenv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+build/
+dist/
